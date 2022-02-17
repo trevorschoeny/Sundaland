@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Book>
+
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Books</h2>
+                <h3 class="section-subheading text-muted">Catalog of Professor Hilton's Favorite Books</h3>
+            </div>
+            <div class="container">
+                <div class="row">
+                    @foreach (Book b in Model)
+                    {
+                        <div class="col-md-auto p-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">@b.Title</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">by @b.Author</h6>
+                                    <p class="card-text">
+                                        <ul>
+                                            <li>Category: @b.Category</li>
+                                            <li>Length: @b.PageCount Pages</li>
+                                            <li>Price: $@b.Price</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+    </section>
