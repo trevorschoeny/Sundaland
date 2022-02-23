@@ -11484,23 +11484,75 @@ header.masthead-small .masthead-small-heading {
 }
 
 @media (min-width: 768px) {
-  header.masthead-small {
+    header.masthead-small {
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+    }
+
+        header.masthead-small .masthead-small-subheading {
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        header.masthead-small .masthead-small-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 3.5rem;
+            margin-bottom: 2rem;
+        }
+}
+
+
+header.masthead-cart {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #fff;
+    background-image: url("../assets/img/header-cart.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+    header.masthead-cart .masthead-cart-subheading {
+        font-size: 1.5rem;
+        font-style: italic;
+        line-height: 1.5rem;
+        margin-bottom: 25px;
+        font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    header.masthead-cart .masthead-cart-heading {
+        font-size: 3.25rem;
+        font-weight: 700;
+        line-height: 3.25rem;
+        margin-bottom: 2rem;
+        font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+@media (min-width: 768px) {
+  header.masthead-cart {
     padding-top: 7rem;
     padding-bottom: 4rem;
   }
-  header.masthead-small .masthead-small-subheading {
+  header.masthead-cart .masthead-cart-subheading {
     font-size: 1.5rem;
     font-style: italic;
     line-height: 1.5rem;
     margin-bottom: 2rem;
   }
-  header.masthead-small .masthead-small-heading {
+  header.masthead-cart .masthead-cart-heading {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 3.5rem;
     margin-bottom: 2rem;
   }
 }
+
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
