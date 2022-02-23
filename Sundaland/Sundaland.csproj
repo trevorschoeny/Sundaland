@@ -16,6 +16,8 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="bootstrap" />
     <None Remove="Views\Home\Templates\" />
+    <None Remove="Models\ViewModels\" />
+    <None Remove="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -28,6 +30,8 @@
     <Folder Include="wwwroot\lib\twitter-bootstrap\" />
     <Folder Include="wwwroot\assets\" />
     <Folder Include="Views\Home\Templates\" />
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

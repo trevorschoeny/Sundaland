@@ -1,34 +1,42 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model List<Book>
+@model BookListViewModel
 
-    <section class="page-section" id="services">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Books</h2>
-                <h3 class="section-subheading text-muted">Catalog of Professor Hilton's Favorite Books</h3>
-            </div>
-            <div class="container">
-                <div class="row">
-                    @foreach (Book b in Model)
-                    {
-                        <div class="col-md-auto p-4">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">@b.Title</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">by @b.Author</h6>
-                                    <p class="card-text">
-                                        <ul>
-                                            <li>Category: @b.Category</li>
-                                            <li>Length: @b.PageCount Pages</li>
-                                            <li>Price: $@b.Price</li>
-                                        </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    }
+<!-- Masthead-->
+<header class="masthead-small">
+    <div class="container">
+        <div class="masthead-small-heading">BOOK LIST</div>
+        <div class="masthead-small-subheading">Catalog of Professor Hilton's Favorite Books</div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row m-5">
+        @foreach (Book b in Model.Books)
+        {
+            <div class="col col-lg-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@b.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">by @b.Author</h6>
+                        <p class="card-text">
+                            <ul>
+                                <li>Category: @b.Category</li>
+                                <li>Length: @b.PageCount Pages</li>
+                            </ul>
+                            <div class="badge bg-success">Price: $@b.Price</div>
+                        </p>
+                    </div>
                 </div>
             </div>
-    </section>
+        }
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div page-blah="@Model.PageInfo" page-action="Booklist" page-class="btn"
+                    page-class-normal="btn-outline-secondary" page-class-selected="btn-primary"
+                    page-class-enabled="true"
+                    class="btn-group pull-right m-1"></div>
+        </div>
+    </div>
