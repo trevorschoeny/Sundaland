@@ -45,7 +45,7 @@ namespace WaterProject.Infrastructure
 
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
 
-                if(PageClassEnabled)
+                if (PageClassEnabled)
                 {
                     tb.AddCssClass(PageClass);
                     tb.AddCssClass(i == PageBlah.CurrentPage ? PageClassSelected : PageClassNormal);

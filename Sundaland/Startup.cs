@@ -52,13 +52,21 @@ namespace Sundaland
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "Paging",
-                    pattern: "Page{pageNum}",
-                    defaults: new { Controller = "Home", action = "Index" });
+                    "CategoryPage",
+                    "Category{category}/Page{pageNum}",
+                    new { Controller = "Home", action = "Booklist" });
 
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    name: "Paging",
+                    pattern: "Page{pageNum}",
+                    defaults: new { Controller = "Home", action = "Booklist" });
+
+                endpoints.MapControllerRoute(
+                    "Category",
+                    "Category{category}",
+                    new { Controller = "Home", action = "Booklist" });
+
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
