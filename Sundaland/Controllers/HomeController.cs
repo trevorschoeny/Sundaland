@@ -21,20 +21,22 @@ namespace Sundaland.Controllers
             return View();
         }
 
-        public IActionResult Booklist(int pageNum = 1)
+        public IActionResult Booklist(string category, int pageNum = 1)
         {
             int pageSize = 10;
 
             var bookListViewModel = new BookListViewModel
             {
                 Books = repo.Books
-                    .OrderBy(b => b.Title)
+                    .Where(b => b.Category == category || category == null)
                     .Skip(pageSize * (pageNum - 1))
                     .Take(pageSize),
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks = (category == null
+                        ? repo.Books.Count()
+                        : repo.Books.Where(b => b.Category == category).Count()),
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }

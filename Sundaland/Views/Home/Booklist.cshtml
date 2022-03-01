@@ -3,7 +3,7 @@
 *@
 @model BookListViewModel
 
-<!-- Masthead-->
+<!-- Masthead -->
 <header class="masthead-small">
     <div class="container">
         <div class="masthead-small-heading">BOOK LIST</div>
@@ -12,31 +12,26 @@
 </header>
 
 <div class="container">
-    <div class="row m-5">
-        @foreach (Book b in Model.Books)
-        {
-            <div class="col col-lg-3 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">@b.Title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">by @b.Author</h6>
-                        <p class="card-text">
-                            <ul>
-                                <li>Category: @b.Category</li>
-                                <li>Length: @b.PageCount Pages</li>
-                            </ul>
-                            <div class="badge bg-success">Price: $@b.Price</div>
-                        </p>
-                    </div>
+    <div class="row">
+
+        <div class="col-2 pt-4">
+            <vc:categories></vc:categories>
+        </div>
+
+        <div class="col">
+            <div class="row m-5">
+                @foreach (Book b in Model.Books)
+                {
+                    <partial name="BookDetails" model="b" />
+                }
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div page-blah="@Model.PageInfo" page-action="Booklist" page-class="btn"
+                         page-class-normal="btn-outline-secondary" page-class-selected="btn-primary"
+                         page-class-enabled="true"
+                         class="btn-group pull-right m-1"></div>
                 </div>
             </div>
-        }
-    </div>
-    <div class="row justify-content-center">
-        <div class="col">
-            <div page-blah="@Model.PageInfo" page-action="Booklist" page-class="btn"
-                    page-class-normal="btn-outline-secondary" page-class-selected="btn-primary"
-                    page-class-enabled="true"
-                    class="btn-group pull-right m-1"></div>
         </div>
     </div>
